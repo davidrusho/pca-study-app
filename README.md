@@ -16,7 +16,7 @@ Write-up: https://davidrusho.com/posts/pca-study-app/
 
 ## Run it
 
-Open `index.html` in a browser. There is no build step and no server. Everything is static, and the keyword data loads from a plain script tag, so it works from a `file://` page.
+Open `index.html` in a browser. There's no build step and no server to run: the page is static, and the keyword data loads from a plain script tag, so it works when opened straight from disk.
 
 ## Edit the keywords
 
@@ -26,7 +26,7 @@ The keyword reference is generated. Edit `data/keywords.md`, then run:
 python3 build_keywords.py
 ```
 
-That rewrites `keywords.js`. Do not edit `keywords.js` by hand, because the next run overwrites it. The script reads each markdown table under a `## ` heading, plus the bullets under "Habits that find the answer". It uses only the Python standard library.
+That rewrites `keywords.js`, so don't edit `keywords.js` by hand (the next run overwrites it). The script reads each markdown table under a `## ` heading, plus the bullets under "Habits that find the answer". It uses only the Python standard library.
 
 ## Tests
 
@@ -36,7 +36,7 @@ python3 test_build_keywords.py
 
 ## Disclaimer
 
-These are my personal study notes. They are not affiliated with or endorsed by Google, and they are not exam content. Where I quote Google Cloud documentation, the quote is attributed and linked to the page it came from. Google Cloud documentation content is licensed under CC BY 4.0. Check the current documentation before relying on anything here, since products change.
+These are my personal study notes. They are not affiliated with or endorsed by Google, and they contain no real exam questions. Where I quote Google Cloud documentation, the quote is attributed and linked to the page it came from. Google Cloud documentation content is licensed under CC BY 4.0. Check the current documentation before relying on anything here, since products change.
 
 ## Licence
 
