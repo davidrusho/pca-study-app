@@ -1,32 +1,36 @@
 # PCA study app
 
-An offline study aid for the Google Cloud Professional Cloud Architect exam. I built it from my own mock exam misses and study notes. It has:
-
-- concept diagrams for the topics I kept getting wrong (private pools, Cloud NAT, hybrid paths, VPC Service Controls, GKE scaling and others)
-- decision tables that turn a requirement in the question into a product choice
-- a searchable keyword to product reference, with 187 rows across 17 sections
-- quick cards for the four exam case studies: EHR Healthcare, Altostrat Media, Cymbal Retail and KnightMotives Automotive
+This is an offline version of the study aid for the Google Cloud Professional Cloud Architect exam. 
+I built this based off my own notes from taking a bunch of mock exams and exploring exam topics that peaked my interest.
+The guide as the following:
+- concept diagrams (private pools, Cloud NAT, hybrid paths, VPC Service Controls, GKE scaling and others)
+- decision tables that turn a requirement in a question into a product choice
+- quick cards for the four exam case studies:
+  - EHR Healthcare, Altostrat Media, Cymbal Retail and KnightMotives Automotive
 
 ![Searching the keyword reference for "Cloud Run"](docs/screenshots/keywords-search.png)
 
 ![The case studies tab](docs/screenshots/case-studies-tab.png)
 
-Live version: https://davidrusho.com/tools/pca-study/
-Write-up: https://davidrusho.com/posts/pca-study-app/
+- [Live version](https://davidrusho.com/tools/pca-study/)
+- [Write-up](https://davidrusho.com/posts/pca-study-app/)
 
 ## Run it
 
-Open `index.html` in a browser. There's no build step and no server to run: the page is static, and the keyword data loads from a plain script tag, so it works when opened straight from disk.
+Open `index.html` in a browser. 
+The page is static, so there's no build step or no server to run. 
 
 ## Edit the keywords
 
-The keyword reference is generated. Edit `data/keywords.md`, then run:
+To setup your own edit to the keywords section: 
+Edit `data/keywords.md`, then run:
 
-```
+```bash
 python3 build_keywords.py
 ```
 
-That rewrites `keywords.js`, so don't edit `keywords.js` by hand (the next run overwrites it). The script reads each markdown table under a `## ` heading, plus the bullets under "Habits that find the answer". It uses only the Python standard library.
+This should rewrite `keywords.js`. 
+The script reads each markdown table under a `## ` heading, plus the bullets under "Habits that find the answer". It uses only the Python standard library.
 
 ## Tests
 
